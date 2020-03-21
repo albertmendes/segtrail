@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule Citytour-Wuerzburg ?id=1
+RewriteRule Stadtfuehrung-Wuerzburg ?id=2
+RewriteRule Stadt-Land-Fluss ?id=3
+RewriteRule Wein-und-Lust-Wuerzburg ?id=4
+RewriteRule Flaggschiff-Kreuzwertheim ?id=5
+RewriteRule Segway-Reblauskommando ?id=6
+RewriteRule Rundflug-Wertheim ?id=7
+RewriteRule Zwei-Laender-Tour-Wertheim ?id=8
+RewriteRule Stadtfuehrung-Wertheim ?id=9
+
+#gRewriteCond %{REQUEST_FILENAME} !-f
+#gRewriteCond %{REQUEST_FILENAME} !-d
+#gRewriteRule (.*) /404.html
+#gErrorDocument 404 /404.html
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
